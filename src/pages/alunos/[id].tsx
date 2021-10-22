@@ -21,6 +21,7 @@ export async function getStaticPaths() {
     return { params: { id } };
   });
 
+  //  fallback: true, ele irar chamar o metodo  getStaticProps uma vez é criar uma pagani estatica logo dps
   return {
     fallback: false,
     paths,
