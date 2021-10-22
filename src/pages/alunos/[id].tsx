@@ -23,7 +23,7 @@ export async function getStaticPaths() {
 
   //  fallback: true, ele irar chamar o metodo  getStaticProps uma vez é criar uma pagani estatica logo dps
   return {
-    fallback: false,
+    fallback: true,
     paths,
   };
 }
@@ -66,12 +66,16 @@ export default function StudentsId(props: PageProps) {
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <th style={{ borderStyle: "double" }}>{student.id}</th>
-            <th style={{ borderStyle: "double" }}>{student.name}</th>
-            <th style={{ borderStyle: "double" }}>{student.idade}</th>
-            <th style={{ borderStyle: "double" }}>{student.email}</th>
-          </tr>
+          {student ? (
+            <tr>
+              <th style={{ borderStyle: "double" }}>{student.id}</th>
+              <th style={{ borderStyle: "double" }}>{student.name}</th>
+              <th style={{ borderStyle: "double" }}>{student.idade}</th>
+              <th style={{ borderStyle: "double" }}>{student.email}</th>
+            </tr>
+          ) : (
+            false
+          )}
         </tbody>
       </table>
     </div>
