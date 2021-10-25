@@ -1,4 +1,5 @@
 export function getStaticProps() {
+  // refaz o componente acada 7 segundos, ou seja gera um novo html
   return {
     revalidate: 7, //segundos
     props: {
